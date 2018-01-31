@@ -3,6 +3,7 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import os
+import sys
 module_dir = os.path.join(os.getcwd(), "fx_visual_tests")
 sys.path.append(module_dir)
 from app import App
