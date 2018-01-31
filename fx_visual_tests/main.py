@@ -6,17 +6,18 @@
 import os
 import subprocess
 
-# invoke the Sikuli jar in order to load a .sikuli package
-# which will in turn load our main app
-module_dir = os.path.split(__file__)[0]
 
-jar_path = os.path.join(module_dir, "lib/sikuli/sikuli-script.jar")
-init_path = os.path.join(module_dir, "lib/sikuli/import.sikuli")
-
+# this is the main entry point defined in setup.py
 
 def main(argv=None):
     print "main.py: main"
-    cmd = ['java', '-jar', jar_path, "-l", init_path]
 
+    # invoke the Sikuli jar in order to load a .sikuli package
+    # which will in turn load our main app
+
+    module_dir = os.path.split(__file__)[0]
+    jar_path = os.path.join(module_dir, "lib/sikuli/sikuli-script.jar")
+    init_path = os.path.join(module_dir, "lib/sikuli/import.sikuli")
+
+    cmd = ['java', '-jar', jar_path, "-l", init_path]
     p = subprocess.Popen(cmd).communicate()
-    return

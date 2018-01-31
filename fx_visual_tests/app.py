@@ -14,5 +14,6 @@ class App(object):
         self._pattern = sikuli["pattern"]
         test_runner.run(self)
 
+    # We can create friendly wrapper methods around Sikuli
     def get_screen(self):
         return self._screen
