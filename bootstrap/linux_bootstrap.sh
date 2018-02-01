@@ -4,6 +4,7 @@ sudo apt-get update
 sudo apt-get -y install \
     default-jre \
     python-dev \
+    xvfb \
     libopencv-dev \
     tesseract-ocr
 
@@ -12,3 +13,6 @@ sudo apt-get -y install virtualenv \
 	|| sudo apt-get -y install python-virtualenv
 
 sudo python -m pip install --upgrade --force pip
+
+# This allows support for headless mode on AWS
+Xvfb :99 & export DISPLAY=:99
