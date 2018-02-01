@@ -12,6 +12,9 @@ import subprocess
 def main(argv=None):
     print "main.py: main"
 
+    # set up communication for headless mode
+    os.environ["DISPLAY"] = ":99"
+
     # invoke the Sikuli jar in order to load a .sikuli package
     # which will in turn load our main app
 
