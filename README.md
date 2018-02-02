@@ -32,7 +32,7 @@ Install Python 2.7
 
 Add the following paths to your system environment variable for PATH:
 
-c:\Python27;c:\Python27\Scripts
+    C:\Python27;C:\Python27\Scripts
 
 Run the following commands:
 
@@ -43,7 +43,9 @@ Run the following commands:
     pip install -e .
     fx_visual_tests
     
-Note that you will get a fatal error from Sikuli, regarding a path issue. This is expected. Log out and back in to your Windows account (or restart) and repeat just the following commands:
+Note that you will get a fatal error from Sikuli, regarding a path issue. This is expected. 
+
+Log out and back in to your Windows account (or restart) and repeat just the following commands:
 
     cd fx_visual_tests
     virtualenv .
