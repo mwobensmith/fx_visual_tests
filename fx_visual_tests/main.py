@@ -20,10 +20,11 @@ def main(argv=None):
     module_dir = os.path.split(__file__)[0]
 
     # if Windows, set environment variable for path
-    if detect_platform().startswith("win"):
-        libs_path = os.path.join(module_dir, "lib\sikuli\libs")
-        path_cmd = ['set', 'PATH=%PATH%;' + libs_path]
-        p = subprocess.Popen(path_cmd).communicate()
+    # TODO: fix, not working
+    # if detect_platform().startswith("win"):
+    #    libs_path = os.path.join(module_dir, "lib\sikuli\libs")
+    #    path_cmd = ['set', 'PATH=%PATH%;' + libs_path]
+    #    p = subprocess.Popen(path_cmd).communicate()
 
     # invoke the Sikuli jar in order to load a .sikuli package
     # which will in turn load our main app
