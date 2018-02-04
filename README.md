@@ -47,7 +47,7 @@ Scripts\activate
 pip install -e .
 fx_visual_tests
 ```
-Note that you will get a fatal error from Sikuli, regarding a path issue. This is expected. 
+*Note that you will get a fatal error from Sikuli, regarding a path issue. This is expected.* 
 
 * Log out and back in to your Windows account (or restart) and repeat just the following commands:
 ```
