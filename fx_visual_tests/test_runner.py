@@ -5,6 +5,11 @@
 
 from tests import hello_world
 
+# can we iterate through the file system and dynamically import?
+# can we save a list of those imported files?
+
 def run(app):
     print "test_runner.py: Running tests"
-    hello_world.run(app)
+    # then we'd dynamically call test() and run on this list of test cases
+    hello_world.test(app).run()
+    # obj = hello_world(app).run()
