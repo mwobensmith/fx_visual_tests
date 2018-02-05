@@ -1,7 +1,7 @@
-import os
-import sys
-module_dir = os.path.join(os.getcwd(), "fx_visual_tests")
-sys.path.append(module_dir)
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
+
 
 
 class base_test(object):
@@ -18,6 +18,7 @@ class base_test(object):
         return
 
 
-    # Another possibility: wrap core methods here
+    # Another possibility: wrap core and helper methods here
     def get_screen(self):
-        return self._app.core.get_screen()
+        s = self._app.core.get_screen()()
+        return "This is a screen object: " + str(s)

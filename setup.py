@@ -28,7 +28,7 @@ setup(
     description='Visual Test Suite for Mozilla Firefox',
     classifiers=[
         'Environment :: Console',
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 1 - Planning Development Status',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
         'Natural Language :: English',
@@ -55,7 +55,6 @@ setup(
     install_requires=INSTALL_REQUIRES,
     tests_require=TESTS_REQUIRE,
     extras_require={'dev': DEV_REQUIRES},  # For `pip install -e .[dev]`
-    test_suite='nose.collector',
     entry_points={
         'console_scripts': [
             'fx_visual_tests = fx_visual_tests.main:main'

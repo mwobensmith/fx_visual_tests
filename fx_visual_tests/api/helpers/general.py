@@ -1,3 +1,6 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
 
@@ -8,8 +11,7 @@ class general(object):
 
 
     def do_something(self):
-        print "I can access APIs:"
-        print self.core.get_key()
+        return "I am a helper function: " + str (self.core.get_key())
 
 
     def launch_firefox(self, args):

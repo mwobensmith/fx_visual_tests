@@ -9,7 +9,7 @@ import test_runner
 
 class App(object):
 
-    def __init__(self,s):
+    def __init__(self, sikuli_imports):
         print "app.py: This is our main app"
 
         # This class is instantiated from inside Sikuli,
@@ -17,7 +17,7 @@ class App(object):
         # Therefore, this is where we turn those classes
         # into our own usable methods.
 
-        self.core = sikuli(s)
+        self.core = sikuli(sikuli_imports)
 
         # Helpers will be a library of commonly-used methods that
         # are written on top of our core API.
