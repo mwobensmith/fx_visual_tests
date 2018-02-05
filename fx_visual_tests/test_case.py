@@ -1,8 +1,10 @@
-#from api.core import sikuli
+import os
+import sys
+module_dir = os.path.join(os.getcwd(), "fx_visual_tests")
+sys.path.append(module_dir)
 
 
-
-class test_case(object):
+class base_test(object):
 
 
     def __init__(self, app):

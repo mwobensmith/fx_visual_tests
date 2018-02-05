@@ -2,14 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
+# Temporarily hard-coded for just one test
+from tests.general import hello_world
 
-from tests import hello_world
 
-# can we iterate through the file system and dynamically import?
-# can we save a list of those imported files?
+# The test runner will be written so that it can iterate through the "tests"
+# directory and dynamically import what it finds.
+#
+# Additionally, we can create a file that can exclude tests from running,
+# and/or create logic to only run certain tests.
 
 def run(app):
     print "test_runner.py: Running tests"
     # then we'd dynamically call test() and run on this list of test cases
     hello_world.test(app).run()
-    # obj = hello_world(app).run()

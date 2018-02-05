@@ -21,7 +21,7 @@ class App(object):
 
         # Helpers will be a library of commonly-used methods that
         # are written on top of our core API.
-        # Eventually we'll have general categories of helpers outside
+        # Eventually we'll have more categories of helpers outside
         # of just one ("general").
 
         self.helpers = general(self.core)
