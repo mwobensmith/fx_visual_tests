@@ -48,7 +48,7 @@ def type(pattern=None, text=None, modifier=None):
 
 
 def Key():
-    return Sikuli.Key
+    return Sikuli.Key()
 
 
 def Pattern(path):

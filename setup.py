@@ -11,6 +11,7 @@ INSTALL_REQUIRES = [
     'coloredlogs',
     'hashfs',
     'python-dateutil',
+    'sikuli'
 ]
 
 TESTS_REQUIRE = [
