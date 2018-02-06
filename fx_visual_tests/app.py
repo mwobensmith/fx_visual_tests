@@ -2,22 +2,20 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from api.core.sikuli import sikuli
+from api.core import core
 from api.helpers.general import general
 
 import test_runner
 
 class App(object):
 
-    def __init__(self, sikuli_imports):
+    def __init__(self):
         print "app.py: This is our main app"
 
-        # This class is instantiated from inside Sikuli,
-        # where it is passed an object containing Sikuli classes.
-        # Therefore, this is where we turn those classes
-        # into our own usable methods.
+        # First we will create the core API,
+        # on which our project is built
 
-        self.core = sikuli(sikuli_imports)
+        self.core = core()
 
         # Helpers will be a library of commonly-used methods that
         # are written on top of our core API.

@@ -3,7 +3,8 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Temporarily hard-coded for just one test
-from tests.general import hello_world
+from tests.general import hello_world, new_browser_window
+from tests.tracy import test_BasicURL, test_BackForward
 
 
 # The test runner will be written so that it can iterate through the "tests"
@@ -14,5 +15,14 @@ from tests.general import hello_world
 
 def run(app):
     print "test_runner.py: Running tests"
+
+    # start with no saved profiles
+    app.helpers.clean_profiles()
+
     # then we'd dynamically call test() and run on this list of test cases
     hello_world.test(app).run()
+    new_browser_window.test(app).run()
+    test_BasicURL.test(app).run()
+    test_BackForward.test(app).run()
+
+    app.helpers.clean_profiles()

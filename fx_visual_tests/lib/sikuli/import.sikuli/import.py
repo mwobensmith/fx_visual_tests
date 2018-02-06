@@ -8,19 +8,8 @@ module_dir = os.path.join(os.getcwd(), "fx_visual_tests")
 sys.path.append(module_dir)
 from app import App
 
-# This script runs in java/jython/Sikuli land, so it
-# already has the Sikuli classes imported
+# This script runs in java/jython/Sikuli land,
+# so we will just invoke our app from here
 
-# We will create an object to hold all Sikuli classes
-# that we'd like to access in our project
-
-print "import.py: Getting Sikuli classes"
-obj = {
-    # TBD: add more Sikuli classes and methods
-    "screen": Screen,
-    "key": Key,
-    "pattern": Pattern
-}
-
-# pass it to our app
-a = App(obj)
+print "import.py: Starting from Sikuli"
+App()
