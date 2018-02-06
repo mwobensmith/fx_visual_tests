@@ -2,7 +2,9 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
-# Temporarily hard-coded for just one test
+from api.helpers.general import *
+
+# Temporarily hard-coded for just a few tests
 from tests.general import hello_world, new_browser_window
 from tests.tracy import test_BasicURL, test_BackForward
 
@@ -17,7 +19,7 @@ def run(app):
     print "test_runner.py: Running tests"
 
     # start with no saved profiles
-    app.helpers.clean_profiles()
+    clean_profiles()
 
     # then we'd dynamically call test() and run on this list of test cases
     hello_world.test(app).run()
@@ -25,4 +27,4 @@ def run(app):
     test_BasicURL.test(app).run()
     test_BackForward.test(app).run()
 
-    app.helpers.clean_profiles()
+    clean_profiles()

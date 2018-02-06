@@ -1,7 +1,7 @@
 import helperAwesomebar
+from test_case import *
 import os
 
-from test_case import base_test
 
 
 class test(base_test):
@@ -15,18 +15,20 @@ class test(base_test):
 
     def run(self):
 
-        self.helpers.launch_firefox(profile="back_forward")
+        # helper function
+        launch_firefox(profile="back_forward")
+
         url = "about:home"
         helperAwesomebar.navigate(url)
 
-        if self.core.exists(self.make_pattern("1517515751124.png"), 5):
+        if exists(self.make_pattern("1517515751124.png"), 5):
             url = "www.google.com"
             helperAwesomebar.navigate(url)
-            if self.core.exists(self.make_pattern("1516891870986-1.png"), 2):
+            if exists(self.make_pattern("1516891870986-1.png"), 2):
                 helperAwesomebar.back_in_history()
-                if self.core.exists(self.make_pattern("1517515751124.png"), 2):
+                if exists(self.make_pattern("1517515751124.png"), 2):
                     helperAwesomebar.forward_in_history()
-                    if self.core.exists(self.make_pattern("1516891870986-1.png"), 2):
+                    if exists(self.make_pattern("1516891870986-1.png"), 2):
                         print "PASS"
                     else:
                         print "FAIL"
@@ -37,4 +39,5 @@ class test(base_test):
         else:
             print "FAIL"
 
-        self.helpers.quit_firefox()
+        # helper function
+        quit_firefox()

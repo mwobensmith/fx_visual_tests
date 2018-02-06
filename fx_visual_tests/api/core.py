@@ -7,46 +7,52 @@
 
 from sikuli import *
 
-class core(object):
 
-    def __init__(self):
-        self.meta = "core"
-
-
-    def get_screen(self):
-        return Sikuli.Screen
+def get_screen():
+    return Sikuli.Screen
 
 
-    def get_key(self):
-        return Sikuli.Key
+def get_key():
+    return Sikuli.Key
 
 
-    def wait(self, pattern, timeout):
-        return wait(pattern, timeout)
+def wait(pattern, timeout):
+    return Sikuli.Screen().wait(pattern, timeout)
 
 
-    def exists(self, pattern, timeout):
-        return exists(pattern, timeout)
+def exists(pattern, timeout):
+    return Sikuli.Screen().exists(pattern, timeout)
 
 
-    def type(self, pattern=None, text=None, modifier=None):
-        if pattern is None:
-            if modifier is None:
-                return type(text)
-            else:
-                return type(text, modifier)
+def click(pattern):
+    return Sikuli.Screen().click(pattern)
+
+
+def type(pattern=None, text=None, modifier=None):
+    if pattern is None:
+        if modifier is None:
+            return Sikuli.Screen().type(text)
         else:
-            if modifier is None:
-                if text is None:
-                    return type(pattern)
-                else:
-                    return type(pattern, text)
+            return Sikuli.Screen().type(text, modifier)
+    else:
+        if modifier is None:
+            if text is None:
+                return Sikuli.Screen().type(pattern)
             else:
-                if text is None:
-                    return type(pattern, modifier)
-                else:
-                    return type(pattern, text, modifier)
+                return Sikuli.Screen().type(pattern, text)
+        else:
+            if text is None:
+                return Sikuli.Screen().type(pattern, modifier)
+            else:
+                return Sikuli.Screen().type(pattern, text, modifier)
 
 
-    def Key(self):
-        return Key
+def Key():
+    return Sikuli.Key
+
+
+def Pattern(path):
+    return Sikuli.Pattern(path)
+
+def Screen():
+    return Sikuli.Screen()

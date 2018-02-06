@@ -2,10 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from sikuli import *
-
-
-from test_case import base_test
+from test_case import *
 
 
 class test(base_test):
@@ -21,15 +18,13 @@ class test(base_test):
 
         print "\nWe have various ways to create tests."
 
-        print "We can access our own core classes: "
-        print "\t" + str(self.core.get_screen())
+        print "We can access our own core classes and methods: "
+        print "\t" + str(Key())
+        print "\t" + str(exists)
 
         print "We can use our own helpers:"
-        print "\t" + str(self.helpers.do_something())
+        print "\t" + str(do_something())
 
         print "We can use high-level commands in our test case:"
         print "\t" + str(self.get_screen())
 
-        print "We can even access Sikuli classes directly:"
-        p = Pattern("foo")
-        print "\tThis is a Pattern object: " + str(p)

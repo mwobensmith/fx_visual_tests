@@ -1,5 +1,7 @@
 import os
-from sikuli import *
+from api.core import *
+from api.helpers.general import *
+
 
 Settings.MoveMouseDelay = 0
 
@@ -9,8 +11,8 @@ def make_pattern(file_name):
     return Pattern(os.path.join(current_dir, "images", file_name))
 
 def navigate(url):
-    wait(make_pattern("1516888289228.png"), 5)
-    type((make_pattern("1516888289228.png").targetOffset(221, 0)), url + Key.ENTER)
+    wait(make_pattern("1516888289228.png"), 10)
+    type((make_pattern("1516888289228.png").targetOffset(221, 0)), url + Key().ENTER)
     return
 
 

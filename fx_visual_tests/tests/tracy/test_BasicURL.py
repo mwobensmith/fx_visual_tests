@@ -1,7 +1,9 @@
+
 import helperAwesomebar
 import os
+from test_case import *
 
-from test_case import base_test
+
 
 
 class test(base_test):
@@ -15,15 +17,15 @@ class test(base_test):
 
     def run(self):
 
-        self.helpers.launch_firefox(profile="new_profile")
+        launch_firefox(profile="new_profile")
 
         url = "www.google.com"
         helperAwesomebar.navigate(url)
 
         image = self.make_pattern("1516891870986.png")
-        if self.core.exists(image, 5):
+        if exists(image, 5):
             print "PASS"
         else:
             print "FAIL"
 
-        self.helpers.quit_firefox()
+        quit_firefox()

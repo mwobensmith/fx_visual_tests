@@ -1,8 +1,8 @@
 
+from test_case import *
+
 import os
 
-
-from test_case import base_test
 
 
 class test(base_test):
@@ -19,16 +19,27 @@ class test(base_test):
 
     def run(self):
 
-        self.helpers.launch_firefox()
+        # helper function
+        launch_firefox()
+
+        # custom function to construct the correct image path
         fx_ui = self.make_pattern("1517869118302.png")
-        self.core.wait(fx_ui, 10)
-        self.helpers.new_tab()
+
+        # core api function
+        wait(fx_ui, 10)
+
+        # helper function
+        new_tab()
+
+        # custom high-level function
         self.launch_ten_tabs()
 
-        if self.core.exists(fx_ui, 5):
+        # core api function
+        if exists(fx_ui, 5):
             print "PASS"
         else:
             print "FAIL"
 
-        self.helpers.quit_firefox()
+        # helper function
+        quit_firefox()
 
