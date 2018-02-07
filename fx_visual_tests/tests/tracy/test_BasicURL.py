@@ -5,7 +5,6 @@
 
 import os
 from test_case import *
-
 from api.helpers.awesome_bar import *
 
 
@@ -20,15 +19,20 @@ class test(base_test):
 
     def run(self):
 
+        # helper function from "general"
         launch_firefox(profile="new_profile")
 
         url = "www.google.com"
+        # helper function from "awesome_bar"
         navigate(url)
 
         image = self.make_pattern("1516891870986.png")
+
+        # core api function
         if exists(image, 5):
             print "PASS"
         else:
             print "FAIL"
 
+        # helper function from "general"
         quit_firefox()

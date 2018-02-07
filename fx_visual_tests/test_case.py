@@ -9,9 +9,9 @@ from api.helpers.general import *
 
 class base_test(object):
 
-
     def __init__(self, app):
         self._app = app
+
 
     def setup (self):
         """
@@ -42,6 +42,7 @@ class base_test(object):
         return "This is a screen object: " + str(s)
 
 
+    # Just showing what we can do here
     def launch_ten_tabs(self):
         new_tab()
         new_tab()

@@ -20,19 +20,32 @@ class test(base_test):
 
     def run(self):
 
-        # helper function
+        # helper function from "general"
         launch_firefox(profile="back_forward")
 
         url = "about:home"
+        # helper function from "awesome_bar"
         navigate(url)
 
         if exists(self.make_pattern("1517515751124.png"), 5):
             url = "www.google.com"
+
+            # helper function from "awesome_bar"
             navigate(url)
+
+            # core api function
             if exists(self.make_pattern("1516891870986-1.png"), 2):
+
+                # helper function from "awesome_bar"
                 back_in_history()
+
+                # core api function
                 if exists(self.make_pattern("1517515751124.png"), 2):
+
+                    # helper function from "awesome_bar"
                     forward_in_history()
+
+                    # core api function
                     if exists(self.make_pattern("1516891870986-1.png"), 2):
                         print "PASS"
                     else:
@@ -44,5 +57,5 @@ class test(base_test):
         else:
             print "FAIL"
 
-        # helper function
+        # helper function from "general"
         quit_firefox()
