@@ -11,6 +11,9 @@ INSTALL_REQUIRES = [
     'coloredlogs',
     'hashfs',
     'python-dateutil',
+    'cython',
+    'pyobjc',
+    'jnius',
     'sikuli'
 ]
 
