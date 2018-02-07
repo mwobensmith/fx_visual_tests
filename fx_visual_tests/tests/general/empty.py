@@ -4,7 +4,6 @@
 
 
 from test_case import *
-import os
 
 
 

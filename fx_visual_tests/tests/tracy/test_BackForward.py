@@ -5,7 +5,6 @@
 
 from api.helpers.awesome_bar import *
 from test_case import *
-import os
 
 
 

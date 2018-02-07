@@ -3,9 +3,9 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
-import os
-from test_case import *
 from api.helpers.awesome_bar import *
+from test_case import *
+
 
 
 class test(base_test):

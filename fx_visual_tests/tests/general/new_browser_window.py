@@ -4,7 +4,6 @@
 
 
 from test_case import *
-import os
 
 
 
@@ -40,4 +39,3 @@ class test(base_test):
 
         # helper function
         quit_firefox()
-

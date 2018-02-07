@@ -5,7 +5,7 @@
 from api.helpers.general import *
 
 # Temporarily hard-coded for just a few tests
-from tests.general import hello_world, new_browser_window
+from tests.general import hello_world, new_browser_window, empty
 from tests.tracy import test_BasicURL, test_BackForward
 
 
@@ -26,5 +26,6 @@ def run(app):
     new_browser_window.test(app).run()
     test_BasicURL.test(app).run()
     test_BackForward.test(app).run()
+    empty.test(app).run()
 
     clean_profiles()
