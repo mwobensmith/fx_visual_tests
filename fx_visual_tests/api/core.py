@@ -8,12 +8,25 @@
 from sikuli import *
 
 
+Settings.MoveMouseDelay = 0
+
+
+Key = Sikuli.Key
+
+
+Screen = Sikuli.Screen
+
+
+def Pattern(path):
+    return Sikuli.Pattern(path)
+
+
 def get_screen():
-    return Sikuli.Screen
+    return Sikuli.Screen()
 
 
 def get_key():
-    return Sikuli.Key
+    return Sikuli.Key()
 
 
 def wait(pattern, timeout):
@@ -46,13 +59,3 @@ def type(pattern=None, text=None, modifier=None):
             else:
                 return Sikuli.Screen().type(pattern, text, modifier)
 
-
-def Key():
-    return Sikuli.Key()
-
-
-def Pattern(path):
-    return Sikuli.Pattern(path)
-
-def Screen():
-    return Sikuli.Screen()

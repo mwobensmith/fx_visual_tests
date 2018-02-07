@@ -1,9 +1,12 @@
-import os
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
 from api.core import *
-from api.helpers.general import *
+from general import *
 
-
-Settings.MoveMouseDelay = 0
+import os
 
 
 def make_pattern(file_name):
@@ -12,7 +15,7 @@ def make_pattern(file_name):
 
 def navigate(url):
     wait(make_pattern("1516888289228.png"), 10)
-    type((make_pattern("1516888289228.png").targetOffset(221, 0)), url + Key().ENTER)
+    type((make_pattern("1516888289228.png").targetOffset(221, 0)), url + Key.ENTER)
     return
 
 

@@ -1,9 +1,12 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import helperAwesomebar
+
 import os
 from test_case import *
 
-
+from api.helpers.awesome_bar import *
 
 
 class test(base_test):
@@ -20,7 +23,7 @@ class test(base_test):
         launch_firefox(profile="new_profile")
 
         url = "www.google.com"
-        helperAwesomebar.navigate(url)
+        navigate(url)
 
         image = self.make_pattern("1516891870986.png")
         if exists(image, 5):

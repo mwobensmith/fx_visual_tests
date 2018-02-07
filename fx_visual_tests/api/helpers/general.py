@@ -29,11 +29,11 @@ def clean_profiles():
 
 
 def new_tab():
-    type(text=Key().F2, modifier=Key().CTRL)
+    type(text=Key.F2, modifier=Key.CTRL)
     type(text="File")
-    type(text=Key().DOWN)
-    type(text="t", modifier=Key().CMD)
-    type(text=Key().UP)
+    type(text=Key.DOWN)
+    type(text="t", modifier=Key.CMD)
+    type(text=Key.UP)
 
 
 def restart_firefox(args):
@@ -43,12 +43,8 @@ def restart_firefox(args):
 
 def quit_firefox():
     # just as it says, with options
-    type(text=Key().F2, modifier=Key().CTRL)
+    type(text=Key.F2, modifier=Key.CTRL)
     type(text="Firefox")
-    type(text="q", modifier=Key().CMD)
+    type(text="q", modifier=Key.CMD)
     return
 
-
-def navigate (uri, window):
-    # general purpose function
-    return
