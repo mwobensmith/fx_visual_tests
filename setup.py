@@ -10,11 +10,7 @@ PACKAGE_VERSION = '0.1'
 INSTALL_REQUIRES = [
     'coloredlogs',
     'hashfs',
-    'python-dateutil',
-    'cython',
-    'pyobjc',
-    'jnius',
-    'sikuli'
+    'python-dateutil'
 ]
 
 TESTS_REQUIRE = [
