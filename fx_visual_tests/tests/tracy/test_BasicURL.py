@@ -9,13 +9,12 @@ from api.helpers.awesome_bar import *
 
 
 class test(base_test):
+
     def __init__(self, app):
         base_test.__init__(self, app)
+        base_test.set_image_path(self, os.path.split(__file__)[0])
         self.meta = "This is a test of basic URL navigation via awesomebar"
 
-    def make_pattern(self, file_name):
-        current_dir = os.path.split(__file__)[0]
-        return os.path.join(current_dir, "images", file_name)
 
     def run(self):
 
@@ -26,7 +25,7 @@ class test(base_test):
         # helper function from "awesome_bar"
         navigate(url)
 
-        image = self.make_pattern("1516891870986.png")
+        image = "1516891870986.png"
 
         # core api function
         if exists(image, 5):

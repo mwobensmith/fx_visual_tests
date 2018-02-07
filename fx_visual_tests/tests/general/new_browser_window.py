@@ -3,9 +3,7 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
-
 from test_case import *
-
 import os
 
 
@@ -14,12 +12,8 @@ class test(base_test):
 
     def __init__(self, app):
         base_test.__init__(self, app)
+        base_test.set_image_path(self, os.path.split(__file__)[0])
         self.meta = "This is a test of a new browser window"
-
-
-    def make_pattern(self, file_name):
-        current_dir = os.path.split(__file__)[0]
-        return os.path.join(current_dir, "images", file_name)
 
 
     def run(self):
@@ -27,8 +21,7 @@ class test(base_test):
         # helper function
         launch_firefox()
 
-        # custom function to construct the correct image path
-        fx_ui = self.make_pattern("1517869118302.png")
+        fx_ui = "1517869118302.png"
 
         # core api function
         wait(fx_ui, 10)

@@ -10,13 +10,12 @@ import os
 
 
 class test(base_test):
+
     def __init__(self, app):
         base_test.__init__(self, app)
+        base_test.set_image_path(self, os.path.split(__file__)[0])
         self.meta = "This is a test of browser back/forward"
 
-    def make_pattern(self, file_name):
-        current_dir = os.path.split(__file__)[0]
-        return os.path.join(current_dir, "images", file_name)
 
     def run(self):
 
@@ -27,26 +26,26 @@ class test(base_test):
         # helper function from "awesome_bar"
         navigate(url)
 
-        if exists(self.make_pattern("1517515751124.png"), 5):
+        if exists("1517515751124.png", 5):
             url = "www.google.com"
 
             # helper function from "awesome_bar"
             navigate(url)
 
             # core api function
-            if exists(self.make_pattern("1516891870986-1.png"), 2):
+            if exists("1516891870986-1.png", 2):
 
                 # helper function from "awesome_bar"
                 back_in_history()
 
                 # core api function
-                if exists(self.make_pattern("1517515751124.png"), 2):
+                if exists("1517515751124.png", 2):
 
                     # helper function from "awesome_bar"
                     forward_in_history()
 
                     # core api function
-                    if exists(self.make_pattern("1516891870986-1.png"), 2):
+                    if exists("1516891870986-1.png", 2):
                         print "PASS"
                     else:
                         print "FAIL"

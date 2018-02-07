@@ -9,12 +9,17 @@ from sikuli import *
 
 
 Settings.MoveMouseDelay = 0
+Settings.ActionLogs = False
+Settings.InfoLogs = False
+Settings.DebugLogs = False
 
 
 Key = Sikuli.Key
-
-
 Screen = Sikuli.Screen
+
+
+def add_image_path(path):
+    Sikuli.addImagePath(path)
 
 
 def Pattern(path):

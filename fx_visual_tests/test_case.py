@@ -2,15 +2,20 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import os
 
 from api.core import *
 from api.helpers.general import *
+import os
+
 
 class base_test(object):
 
     def __init__(self, app):
         self._app = app
+
+
+    def set_image_path(self, path):
+        add_image_path(os.path.join(path, "images"))
 
 
     def setup (self):

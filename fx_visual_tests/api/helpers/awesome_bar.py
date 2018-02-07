@@ -7,24 +7,25 @@ from api.core import *
 import os
 
 
-def make_pattern(file_name):
-    current_dir = os.path.split(__file__)[0]
-    return Pattern(os.path.join(current_dir, "images", file_name))
+# this will set the image path for this module
+current_dir = os.path.split(__file__)[0]
+path = os.path.join(current_dir, "images")
+add_image_path(path)
 
 
 def navigate(url):
-    wait(make_pattern("1516888289228.png"), 10)
-    type((make_pattern("1516888289228.png").targetOffset(221, 0)), url + Key.ENTER)
+    wait("1516888289228.png", 10)
+    type((Pattern("1516888289228.png").targetOffset(221, 0)), url + Key.ENTER)
     return
 
 
 def back_in_history():
-    wait(make_pattern("1517514241697.png"), 5)
-    click(make_pattern("1517514241697.png"))
+    wait("1517514241697.png", 5)
+    click("1517514241697.png")
     return
 
 
 def forward_in_history():
-    wait(make_pattern("1517514418304.png"), 5)
-    click(make_pattern("1517514418304.png"))
+    wait("1517514418304.png", 5)
+    click("1517514418304.png")
     return
