@@ -11,7 +11,7 @@ INSTALL_REQUIRES = [
     'coloredlogs',
     'hashfs',
     'python-dateutil',
-    'sikuli'
+    #'sikuli' <-- remved so "pip install-e ." would work
 ]
 
 TESTS_REQUIRE = [
