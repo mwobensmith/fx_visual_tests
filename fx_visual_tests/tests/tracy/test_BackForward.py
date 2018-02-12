@@ -4,7 +4,6 @@
 
 
 from api.helpers.awesome_bar import *
-from api.helpers.results import  *
 from test_case import *
 
 
@@ -20,7 +19,7 @@ class test(base_test):
     def run(self):
 
         # helper function from "general"
-        #launch_firefox(profile="back_forward")
+        launch_firefox(profile="back_forward", url="about:blank")
 
         url = "about:home"
         # helper function from "awesome_bar"
@@ -61,4 +60,4 @@ class test(base_test):
         append_results_file(resultMessage)
 
         # helper function from "general"
-        #quit_firefox()
+        quit_firefox()

@@ -5,6 +5,7 @@
 
 from api.core import *
 from api.helpers.general import *
+from api.helpers.results import  *
 import os
 
 
@@ -43,6 +44,7 @@ class base_test(object):
     # One possibility: wrap core and helper methods here as well
     # This might be things that directly apply to test cases, like
     # restoring app state or restoring Fx state
+
 
     def close_all_windows(self):
         """

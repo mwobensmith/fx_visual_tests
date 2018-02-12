@@ -23,28 +23,18 @@ def run(app):
     begin_results_file()
 
     # start with no saved profiles
-    #clean_profiles()
+    clean_profiles()
 
     # Hard-code for now, but we will build a dynamic array of tests to run later
 
     all_tests = [
         new_browser_window,
         test_BasicURL,
-        test_BackForward    ]
-
-    # TBD: default Firefox instance
-    # Launch a main instance of Firefox to use as a default, without a window:
-    # launch_firefox("main_profile")
-    # -silent option not working at the moment
-    # manually close the default window
+        test_BackForward
+    ]
 
 
     # then we'd dynamically call test() and run on this list of test cases
-    #hello_world.test(app).run()
-    #new_browser_window.test(app).run()
-    test_BasicURL.test(app).run()
-    test_BackForward.test(app).run()
-    #empty.test(app).run()
 
     for module in all_tests:
         current = module.test(app)
@@ -52,17 +42,16 @@ def run(app):
 
         # TBD: should we manage launch/quit of Firefox here?
         # Or require test cases to do it?
-        # For now, keeping this logic here
-        ts = int(time.time())
-        profile_name = "profile_%s" % ts
-        launch_firefox(profile_name, "about:blank")
+        #ts = int(time.time())
+        #profile_name = "profile_%s" % ts
+        #launch_firefox(profile_name, "about:blank")
 
         current.setup()
         current.run()
         current.teardown()
 
         #TBD: as above
-        quit_firefox()
+        #quit_firefox()
 
     clean_profiles()
 

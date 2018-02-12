@@ -19,7 +19,7 @@ class test(base_test):
     def run(self):
 
         # helper function
-        #launch_firefox()
+        launch_firefox(profile="new_window_test", url="about:blank")
 
         fx_ui = "1517869118302.png"
 
@@ -34,9 +34,13 @@ class test(base_test):
 
         # core api function
         if exists(fx_ui, 5):
-            print "PASS"
+            result = "PASS"
         else:
-            print "FAIL"
+            result = "FAIL"
+
+        # write the result to file
+        resultMessage = self.meta + ':' + result
+        append_results_file(resultMessage)
 
         # helper function
-        #quit_firefox()
+        quit_firefox()
