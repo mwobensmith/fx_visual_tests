@@ -3,6 +3,7 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from api.helpers.general import *
+from api.helpers.results import *
 
 # Temporarily hard-coded for just a few tests
 from tests.general import hello_world, new_browser_window, empty
@@ -18,6 +19,8 @@ import time
 
 def run(app):
     print "test_runner.py: Running tests"
+    # let's print results to file, this line calls begins that .txt file
+    begin_results_file()
 
     # start with no saved profiles
     #clean_profiles()
@@ -37,6 +40,11 @@ def run(app):
 
 
     # then we'd dynamically call test() and run on this list of test cases
+    #hello_world.test(app).run()
+    #new_browser_window.test(app).run()
+    test_BasicURL.test(app).run()
+    test_BackForward.test(app).run()
+    #empty.test(app).run()
 
     for module in all_tests:
         current = module.test(app)
@@ -56,5 +64,7 @@ def run(app):
         #TBD: as above
         quit_firefox()
 
-
     clean_profiles()
+
+    # this line finishes use of the results text file
+    conclude_results_file()

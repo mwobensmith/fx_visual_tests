@@ -4,8 +4,8 @@
 
 
 from api.helpers.awesome_bar import *
+from api.helpers.results import  *
 from test_case import *
-
 
 
 class test(base_test):
@@ -30,9 +30,13 @@ class test(base_test):
 
         # core api function
         if exists(image, 5):
-            print "PASS"
+            result = "PASS"
         else:
-            print "FAIL"
+            result = "FAIL"
+
+        # write the result to file
+        resultMessage = self.meta + ':' + result
+        append_results_file(resultMessage)
 
         # helper function from "general"
         #quit_firefox()
