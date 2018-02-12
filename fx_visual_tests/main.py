@@ -17,6 +17,11 @@ def main(argv=None):
     # set up communication for headless mode
     os.environ["DISPLAY"] = ":99"
 
+    # obtain OS information while we are still in actual Python
+    # once we are in Java/Jython, these just return "Java"
+    os.environ["OS_NAME"] = detect_os()
+    os.environ["PLATFORM_NAME"] = detect_platform()
+
     module_dir = os.path.split(__file__)[0]
 
     # if Windows, set environment variable for path
@@ -35,7 +40,6 @@ def main(argv=None):
     p = subprocess.Popen(cmd).communicate()
 
 
-
 def detect_platform():
     is_64bit = struct.calcsize('P') * 8 == 64
     platform = None
@@ -45,4 +49,16 @@ def detect_platform():
         platform = "linux" if is_64bit else "linux32"
     elif sys.platform.startswith("win"):
         platform = "win" if is_64bit else "win32"
+    return platform
+
+
+def detect_os():
+    # much like platform, only without processor info
+    platform = None
+    if sys.platform.startswith("darwin"):
+        platform = "osx"
+    elif sys.platform.startswith("linux"):
+        platform = "linux"
+    elif sys.platform.startswith("win"):
+        platform = "win"
     return platform

@@ -10,8 +10,7 @@ PACKAGE_VERSION = '0.1'
 INSTALL_REQUIRES = [
     'coloredlogs',
     'hashfs',
-    'python-dateutil',
-    #'sikuli' <-- remved so "pip install-e ." would work
+    'python-dateutil'
 ]
 
 TESTS_REQUIRE = [
